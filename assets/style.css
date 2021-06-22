@@ -2,22 +2,38 @@ body {
     background-color:rgb(236, 236, 236);
 }
 
-.header{
-    background-color:darkblue;
-}
 
 h1 {
     color:brown;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 48px;
     text-align: center;
-    text-decoration: underline;
     padding: 1%;
+    margin: 1%;
     align-items: center;
+}
+
+.game-start{
+    align-content: center;
+    background-color:darkblue;
+}
+
+#start {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color:rgb(109, 159, 252);
+    color: white;
+    border-color: gray;
 }
 
 .container {
     display: flex;
+    margin-top: 3%;
 }
 
 .child {
