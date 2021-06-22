@@ -15,10 +15,18 @@ h1 {
 
 .game-start{
     align-content: center;
-    background-color:darkblue;
+    background-color:rgb(34, 34, 87);
+    padding-bottom: 1%;
 }
 
-#start {
+.game-start h2{
+    text-align: center;
+    font-size: 36px;
+    padding: 1%;
+    color: white;
+}
+
+.button {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -26,17 +34,31 @@ h1 {
     cursor: pointer;
     font-size: 24px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    background-color:rgb(109, 159, 252);
+    background-color:rgb(117, 126, 250);
     color: white;
     border-color: gray;
 }
 
 .container {
     display: flex;
+    justify-content: space-around;
     margin-top: 3%;
 }
 
 .child {
     padding-left: 2%;
-    width: 50%;
+    padding-bottom: 2%;
+    border: 4px solid black;
+    width: 45%;
+}
+
+.child h3{
+    text-align: center;
+    color: brown;
+    text-decoration: underline;
+    font-size: 32px;
+}
+
+.child h4{
+    font-size: 27px;
 }

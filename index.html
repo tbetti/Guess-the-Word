@@ -11,14 +11,18 @@
     <body>
         <div class="header"><h1>Guess the Word!</h1></div>
         <div class="game-start">
-            <button id="start">Start Timer</button>
+            <h2>Timer: <span id="timer"></span></h2>
+            <button class="button" id="start">Start Timer</button>
         </div>
-        <div class="container" style="border: 1px solid black">
-            <div class="child" id="word" style="border: 1px solid black">
-                <h2>Word:</h2>
+        <div class="container">
+            <div class="child" id="word">
+                <h3>Word:</h3>
             </div>
-            <div class="child" id="score" style="border: 1px solid black">
-                <h2>Score:</h2>
+            <div class="child" id="score">
+                <h3>Score Board:</h3>
+                <h4>Wins: <span id="wins">0</span></h4>
+                <h4>Losses: <span id="losses">0</span></h4>
+                <button class="button" id="reset">Reset</button>
             </div>
         </div>
 
