@@ -70,3 +70,17 @@ h1 {
 .card h4{
     font-size: 27px;
 }
+
+/* Adjust for screen size */
+@media screen and (max-width: 600px){
+    .container{
+        flex-direction: column;
+        margin-top: 1%;
+        justify-content: center;
+    }
+    .card{
+        width: 95%;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+}
