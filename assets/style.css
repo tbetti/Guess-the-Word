@@ -70,6 +70,11 @@ h1 {
 .card h4{
     font-size: 27px;
 }
+#guess-word{
+    display: flex;
+    font-size: 45px;
+    justify-content: center;
+}
 
 /* Adjust for screen size */
 @media screen and (max-width: 600px){
