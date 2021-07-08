@@ -1,12 +1,13 @@
 body {
     background-color:rgb(236, 236, 236);
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Styling for the header */
 h1 {
     color:brown;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 48px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 52px;
     text-align: center;
     padding: 1%;
     margin: 1%;
@@ -23,7 +24,8 @@ h1 {
 .game-start h2{
     text-align: center;
     font-size: 36px;
-    padding: 1%;
+    padding: 2%;
+    margin: 0px;
     color: white;
 }
 
@@ -35,7 +37,7 @@ h1 {
     padding: 10px;
     cursor: pointer;
     font-size: 24px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Rubik', sans-serif;
     background-color:rgb(117, 126, 250);
     color: white;
     border-color: gray;
@@ -64,7 +66,8 @@ h1 {
     text-align: center;
     color: brown;
     text-decoration: underline;
-    font-size: 32px;
+    font-size: 36px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .card h4{

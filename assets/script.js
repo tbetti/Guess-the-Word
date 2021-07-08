@@ -1,7 +1,8 @@
 var timer = document.getElementById("timer");
 var startTimer = document.getElementById("start");
-var wins = 0;
-var losses = 0;
+var resetBtn = document.getElementById("reset");
+var wins = 0 || localStorage.getItem("wins");
+var losses = 0 || localStorage.getItem("losses");
 var winText = document.getElementById("wins");
 var loseText = document.getElementById("losses");
 var availableWords = ["HELLO", "JAVASCRIPT", "OBJECT", "FUNCTION", "ELEMENT", "CASCADING", "STYLESHEET"];
@@ -11,12 +12,11 @@ var splitWord = [];
 var blankLetters = [];
 
 
-winText.textContent = wins;
-loseText.textContent = losses;
+winText.textContent = localStorage.getItem("wins");
+loseText.textContent = localStorage.getItem("losses");
 
 // When start button clicked, start timer and display word
 startTimer.addEventListener("click", beginGame);
-
 function beginGame() {
     if (secondsLeft > 0) {
         countdown();
@@ -25,6 +25,16 @@ function beginGame() {
         resetGame(); // works well
     }
 }
+
+// When reset button clicked, reset scores to 0
+resetBtn.addEventListener("click", function(){
+    resetGame();
+    localStorage.clear();
+    wins = 0;
+    losses = 0;
+    winText.textContent = "";
+    loseText.textContent = "";
+});
 
 //Randomize words to display
 function pickRandomWord() {
@@ -71,8 +81,10 @@ function wordComplete(){
     if (userGuess === actualWord){
         wins++;
         winText.textContent = wins;
+        localStorage.setItem("wins", wins);
 
-        //resetGame(); //makes time go faster and doesn't stop at 0
+        resetGame(); //makes time go faster and doesn't stop at 0
+        beginGame();
     }
 }
 
@@ -83,8 +95,6 @@ function resetGame(){
     secondsLeft = 10;
     timer.textContent = secondsLeft + " seconds";
     word.innerHTML = "";
-
-    beginGame();
 }
 
 // Countdown time left
@@ -97,6 +107,7 @@ function countdown() {
             clearInterval(timerInterval);
             losses++;
             loseText.textContent = losses;
+            localStorage.setItem("losses", losses);
         }
     }, 1000);
 }
