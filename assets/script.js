@@ -1,17 +1,21 @@
+// Create variables for HTML elements
 var timer = document.getElementById("timer");
 var startTimer = document.getElementById("start");
 var resetBtn = document.getElementById("reset");
-var wins = 0 || localStorage.getItem("wins");
-var losses = 0 || localStorage.getItem("losses");
+var word = document.getElementById("guess-word");
 var winText = document.getElementById("wins");
 var loseText = document.getElementById("losses");
+var timerInterval;
+
+// Create arrays for words
 var availableWords = ["HELLO", "JAVASCRIPT", "OBJECT", "FUNCTION", "ELEMENT", "CASCADING", "STYLESHEET"];
-var secondsLeft = 10;
-var word = document.getElementById("guess-word");
 var splitWord = [];
 var blankLetters = [];
 
-
+// Set up the game
+var secondsLeft = 10;
+var wins = 0 || localStorage.getItem("wins");
+var losses = 0 || localStorage.getItem("losses");
 winText.textContent = localStorage.getItem("wins");
 loseText.textContent = localStorage.getItem("losses");
 
@@ -22,25 +26,25 @@ function beginGame() {
         countdown();
         pickRandomWord();
     } else {
-        resetGame(); // works well
+        resetGame();
     }
 }
 
 // When reset button clicked, reset scores to 0
 resetBtn.addEventListener("click", function(){
-    resetGame();
-    localStorage.clear();
     wins = 0;
     losses = 0;
     winText.textContent = "";
     loseText.textContent = "";
+    
+    localStorage.clear();
+    resetGame();
 });
 
 //Randomize words to display
 function pickRandomWord() {
     var random = Math.floor(Math.random() * availableWords.length);
     var chosenWord = availableWords[random];
-    console.log("chosenWord: " + chosenWord);
 
     splitWord = chosenWord.split("");
     console.log("splitWord: " + splitWord);
@@ -52,22 +56,25 @@ function pickRandomWord() {
     word.append(blankLetters.join(" "));
 }
 
-// Each time a key is ipressed, change to uppercase and check if pressed key is in the word
+// Each time a key is pressed, change to uppercase and check if pressed key is in the word
 document.addEventListener("keydown", function (event) {
-    var guessLetter = event.key.toUpperCase();
-    console.log(guessLetter);
+        var guessLetter = event.key.toUpperCase();
+    
+        checkLetters(guessLetter);
+        wordComplete();
 
-    checkLetters(guessLetter);
-    wordComplete();
+        if (secondsLeft === 0){
+            word.innerHTML = "Game Over";
+        }
 })
+
+
 
 // Check to see if pressed letter is part of the mystery word
 function checkLetters(letter){
-    console.log("Letter: " + letter);
     for(var i=0; i< splitWord.length; i++){
         if (splitWord[i] === letter){
                 blankLetters[i]=letter;
-                console.log("BlankLetters: " + blankLetters)
         }   
     }
     word.textContent=blankLetters.join(" ");
@@ -83,7 +90,7 @@ function wordComplete(){
         winText.textContent = wins;
         localStorage.setItem("wins", wins);
 
-        resetGame(); //makes time go faster and doesn't stop at 0
+        resetGame();
         beginGame();
     }
 }
@@ -92,6 +99,8 @@ function wordComplete(){
 function resetGame(){ 
     splitWord = [];
     blankLetters = [];
+    clearInterval(timerInterval);
+
     secondsLeft = 10;
     timer.textContent = secondsLeft + " seconds";
     word.innerHTML = "";
@@ -99,7 +108,7 @@ function resetGame(){
 
 // Countdown time left
 function countdown() {
-    var timerInterval = setInterval(function () {
+    timerInterval = setInterval(function () {
         secondsLeft--;
         timer.textContent = secondsLeft + " seconds";
         
