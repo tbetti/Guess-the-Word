@@ -1,1 +1,5 @@
 # Guess-the-Word
+<a href="https://tbetti.github.io/Guess-the-Word/">Link to File</a>
+<img src="./assets/images/guess_the_word.png">
+<h3>Description</h3>
+<p>This website is a game where users try to guess a computer-related word by typing the letters they think are in the word.  When the user presses the "Start Timer" button, the timer begins at 10 seconds and the users are presented with a series of blank spaces to correspond with each letter of the word.  As they press the correct letters, the blank spaces are replaced by the letters.  If the user correctly guesses the word, the timer resets and their winning score increases by 1 point.  If the timer reaches 0 and they have not correctly guessed their word, a "Game Over" message displays and their losing score increases by 1 point.  Their scores are saved in local storage, and may be reset by clicking the "Reset" button. </p>
