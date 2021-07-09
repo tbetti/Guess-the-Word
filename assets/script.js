@@ -8,7 +8,7 @@ var loseText = document.getElementById("losses");
 var timerInterval;
 
 // Create arrays for words
-var availableWords = ["HELLO", "JAVASCRIPT", "OBJECT", "FUNCTION", "ELEMENT", "CASCADING", "STYLESHEET"];
+var availableWords = ["HELLO", "JAVASCRIPT", "OBJECT", "FUNCTION", "ELEMENT", "CASCADING", "STYLESHEET", "ALGORITHM", "APPLICATIONI", "ARRAY", "BINARY", "BROWSER", "VARIABLE", "DATABASE", "DNS", "ITERATION", "KEYWORD", "STORAGE", "SERVER", "URL", "XML"];
 var splitWord = [];
 var blankLetters = [];
 
@@ -45,24 +45,20 @@ resetBtn.addEventListener("click", function(){
 function pickRandomWord() {
     var random = Math.floor(Math.random() * availableWords.length);
     var chosenWord = availableWords[random];
-
     splitWord = chosenWord.split("");
-    console.log("splitWord: " + splitWord);
-    
+    // Prints blank spaces to the screen with space in between
     for (var i = 0; i < splitWord.length; i++) {
         blankLetters.push("_");
     }
-    // Prints blank spaces to the screen with space in between
     word.append(blankLetters.join(" "));
 }
 
 // Each time a key is pressed, change to uppercase and check if pressed key is in the word
 document.addEventListener("keydown", function (event) {
         var guessLetter = event.key.toUpperCase();
-    
         checkLetters(guessLetter);
         wordComplete();
-
+        // this is needed to stop the game from listening for a "keydown"
         if (secondsLeft === 0){
             word.innerHTML = "Game Over";
         }
@@ -117,6 +113,7 @@ function countdown() {
             losses++;
             loseText.textContent = losses;
             localStorage.setItem("losses", losses);
+            word.innerHTML = "Game Over";
         }
     }, 1000);
 }

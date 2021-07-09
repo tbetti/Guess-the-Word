@@ -6,8 +6,8 @@ body {
 /* Styling for the header */
 h1 {
     color:brown;
-    font-family: 'Rubik', sans-serif;
-    font-size: 52px;
+    font-family: 'Tourney', cursive;    
+    font-size: 60px;
     text-align: center;
     padding: 1%;
     margin: 1%;
@@ -41,6 +41,7 @@ h1 {
     background-color:rgb(117, 126, 250);
     color: white;
     border-color: gray;
+    border-radius: 10px;
 }
 
 .button:hover{
@@ -67,7 +68,7 @@ h1 {
     color: brown;
     text-decoration: underline;
     font-size: 36px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Tourney', cursive;
 }
 
 .card h4{
@@ -90,5 +91,51 @@ h1 {
         width: 95%;
         margin-top: 2%;
         margin-bottom: 1%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    h1{
+        font-size: 48px;
+    }
+    .game-start h2{
+        font-size: 28px;
+    }
+    .button {
+        padding: 5px;
+        font-size: 22px;
+        border-radius: 15px;
+    }
+    .card h3{
+        font-size: 30px;
+    }
+    .card h4{
+        font-size: 28px;
+    }
+    #guess-word{
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    h1{
+        font-size: 32px;
+    }
+    .game-start h2{
+        font-size: 20px;
+    }
+    .button {
+        padding: 5px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+    .card h3{
+        font-size: 26px;
+    }
+    .card h4{
+        font-size: 24px;
+    }
+    #guess-word{
+        font-size: 28px;
     }
 }
