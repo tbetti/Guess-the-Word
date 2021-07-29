@@ -15,3 +15,4 @@
 <p>Ideas for future development include allowing users to input their own words to guess, allowing for multiple players, and saving high scores.</p>
 
 <h3>License</h3>
+<p> View the <a href="/License"> MIT License</a> here. </p>
