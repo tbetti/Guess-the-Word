@@ -14,5 +14,11 @@
 <h3>Future Development</h3>
 <p>Ideas for future development include allowing users to input their own words to guess, allowing for multiple players, and saving high scores.</p>
 
+<h3>Contact Creator</h3>
+<ul>
+    <li><b>Email:</b> tiana.bettinson@gmail.com</li>
+    <li><b>LinkedIn: </b><a href="https://www.linkedin.com/in/tianabettinson/">linkedIn.com/in/TianaBettinson</a></li>
+</ul>
+
 <h3>License</h3>
 <p> View the <a href="/License"> MIT License</a> here. </p>
